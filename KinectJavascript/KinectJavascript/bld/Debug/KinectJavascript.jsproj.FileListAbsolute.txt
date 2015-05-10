@@ -13,3 +13,18 @@ C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJ
 C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\qualifiers.txt.intermediate
 C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\ProjectArchitectures.txt
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\ReverseMap\resources.pri
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\AppxManifest.xml
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\KinectJavascript.build.appxrecipe
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\priconfig.xml
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\priconfig.xml.intermediate
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\layout.resfiles
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\layout.resfiles.intermediate
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\resources.resfiles
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\resources.resfiles.intermediate
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\pri.resfiles
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\pri.resfiles.intermediate
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\qualifiers.txt
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\qualifiers.txt.intermediate
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\ProjectArchitectures.txt

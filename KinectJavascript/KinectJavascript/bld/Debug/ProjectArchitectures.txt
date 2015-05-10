@@ -1,1 +1,1 @@
-C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\KinectJavascript.jsproj;neutral
+C:\Users\Zhixun Tan\Documents\GitHub\KinectD3DGallery\KinectJavascript\KinectJavascript\KinectJavascript.jsproj;neutral
