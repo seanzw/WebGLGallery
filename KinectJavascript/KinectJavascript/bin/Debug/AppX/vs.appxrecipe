@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>SEAN-PC</Machine>
+    <WindowsUser>SeanGeek</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>2675b4ec-240b-4cb4-b48f-3c90c6a385d1</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>104F38871F6F18FD3AE1B867654526D9681B2949D2078AC32FB4CD564C4BA0C6</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>2675b4ec-240b-4cb4-b48f-3c90c6a385d1_1.0.0.0_neutral__h2s1e6vn7tzy2</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>2675b4ec-240b-4cb4-b48f-3c90c6a385d1_h2s1e6vn7tzy2!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>2675b4ec-240b-4cb4-b48f-3c90c6a385d1</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Zhixun Tan</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-10T07:09:33.274</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2015-05-10T06:48:09.546</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\images\logo.scale-100.png">
+      <PackagePath>images\logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-10T05:49:21.364</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\images\smalllogo.scale-100.png">
+      <PackagePath>images\smalllogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-10T05:49:21.365</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\images\splashscreen.scale-100.png">
+      <PackagePath>images\splashscreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-10T05:49:21.366</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\images\storelogo.scale-100.png">
+      <PackagePath>images\storelogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-05-10T05:49:21.367</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\images\test.jpg">
+      <PackagePath>images\test.jpg</PackagePath>
+      <Modified>2015-05-10T06:55:15.397</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2015-05-10T06:32:34.470</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\js\scipt.js">
+      <PackagePath>js\scipt.js</PackagePath>
+      <Modified>2015-05-10T07:31:51.441</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\js\three.js">
+      <PackagePath>js\three.js</PackagePath>
+      <Modified>2015-04-20T23:01:40.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\js\three.min.js">
+      <PackagePath>js\three.min.js</PackagePath>
+      <Modified>2015-05-10T06:34:44.250</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2015-05-10T05:49:21.359</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\packages.config">
+      <PackagePath>packages.config</PackagePath>
+      <Modified>2015-05-10T05:56:05.712</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-05-10T07:09:33.070</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.17018</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.17018</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

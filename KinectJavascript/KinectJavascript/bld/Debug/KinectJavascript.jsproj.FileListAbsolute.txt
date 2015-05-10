@@ -1,0 +1,15 @@
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\ReverseMap\resources.pri
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\AppxManifest.xml
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bin\Debug\KinectJavascript.build.appxrecipe
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\priconfig.xml
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\priconfig.xml.intermediate
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\layout.resfiles
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\layout.resfiles.intermediate
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\resources.resfiles
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\resources.resfiles.intermediate
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\pri.resfiles
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\pri.resfiles.intermediate
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\qualifiers.txt
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\qualifiers.txt.intermediate
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\bld\Debug\ProjectArchitectures.txt
