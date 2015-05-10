@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
+
+  <Identity
+    Name="2675b4ec-240b-4cb4-b48f-3c90c6a385d1"
+    Version="1.0.0.0"
+    Publisher="CN=Zhixun Tan" />
+
+  <Properties>
+    <DisplayName>KinectJavascript</DisplayName>
+    <PublisherDisplayName>Zhixun Tan</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.0</OSMinVersion>
+    <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+
+  <Applications>
+    <Application 
+      Id="App"
+      StartPage="default.html">
+
+      <m2:VisualElements
+        DisplayName="KinectJavascript"
+        Description="KinectJavascript"
+        ForegroundText="light"
+        BackgroundColor="#464646"
+        Square150x150Logo="images\Logo.png"
+        Square30x30Logo="images\SmallLogo.png">
+
+        <m2:SplashScreen Image="images\splashscreen.png" />
+
+      </m2:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+
+</Package>
