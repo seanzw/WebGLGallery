@@ -7,9 +7,9 @@ document.body.appendChild(renderer.domElement);
 
 // load a texture, set wrap mode to repeat
 var texture = THREE.ImageUtils.loadTexture("/images/test.jpg");
-texture.wrapS = THREE.RepeatWrapping;
-texture.wrapT = THREE.RepeatWrapping;
-texture.repeat.set(4, 4);
+//texture.wrapS = THREE.RepeatWrapping;
+//texture.wrapT = THREE.RepeatWrapping;
+//texture.repeat.set(4, 4);
 
 var geometry = new THREE.Geometry();
 
@@ -24,9 +24,15 @@ geometry.faces.push(new THREE.Face3(0, 1, 2));
 geometry.faces.push(new THREE.Face3(2, 3, 0));
 
 geometry.faceVertexUvs[0].push([
-    new THREE.UV(0, 1),
-    new THREE.UV(1, 1),
-    new THREE.UV(1, 0)
+    new THREE.Vector2(0, 1),
+    new THREE.Vector2(0, 0),
+    new THREE.Vector2(1, 0)
+]);
+
+geometry.faceVertexUvs[0].push([
+    new THREE.Vector2(1, 0),
+    new THREE.Vector2(1, 1),
+    new THREE.Vector2(0, 1)
 ]);
 
 var material = new THREE.MeshBasicMaterial({ map: texture });

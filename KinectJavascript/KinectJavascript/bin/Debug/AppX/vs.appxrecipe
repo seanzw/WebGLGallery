@@ -58,7 +58,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\js\scipt.js">
       <PackagePath>js\scipt.js</PackagePath>
-      <Modified>2015-05-10T07:31:51.441</Modified>
+      <Modified>2015-05-10T07:42:31.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\SeanGeek\Documents\Visual Studio 2013\Projects\KinectD3DGallery\KinectJavascript\KinectJavascript\js\three.js">
       <PackagePath>js\three.js</PackagePath>
