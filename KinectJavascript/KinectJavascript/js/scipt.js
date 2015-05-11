@@ -15,11 +15,14 @@ var texture = THREE.ImageUtils.loadTexture(
 
         var geometry = new THREE.Geometry();
 
+        var width = 4;
+        var height = width * h / w;
+
         geometry.vertices.push(
-            new THREE.Vector3(-1, h / w, 0),
-            new THREE.Vector3(-1, -h / w, 0),
-            new THREE.Vector3(1, -h / w, 0),
-            new THREE.Vector3(1, h / w, 0)
+            new THREE.Vector3(-width / 2, height / 2, 0),
+            new THREE.Vector3(-width / 2, -height / 2, 0),
+            new THREE.Vector3(width / 2, -height / 2, 0),
+            new THREE.Vector3(width / 2, height / 2, 0)
         );
 
         geometry.faces.push(new THREE.Face3(0, 1, 2));
@@ -58,9 +61,6 @@ var texture = THREE.ImageUtils.loadTexture(
 
 var render = function () {
     requestAnimationFrame(render);
-
-    //cube.rotation.x += 0.1;
-    //cube.rotation.y += 0.1;
 
     renderer.render(scene, camera);
 };
