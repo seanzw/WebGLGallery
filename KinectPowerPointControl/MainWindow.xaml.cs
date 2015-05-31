@@ -35,6 +35,8 @@ namespace KinectPowerPointControl
 
         bool isForwardGestureActive = false;
         bool isBackGestureActive = false;
+        bool isUpGestureActive = false;
+        bool isDownGestureActive = false;
         SolidColorBrush activeBrush = new SolidColorBrush(Colors.Gold);
         SolidColorBrush inactiveBrush = new SolidColorBrush(Colors.HotPink);
 
@@ -241,28 +243,28 @@ namespace KinectPowerPointControl
 
             if (centerShoulder.Position.Y + 0.1 < rightHand.Position.Y )
             {
-                if (!isBackGestureActive)
+                if (!isUpGestureActive)
                 {
-                    isBackGestureActive = true;
+                    isUpGestureActive = true;
                     System.Windows.Forms.SendKeys.SendWait("{Up}");
                 }
             }
             else
             {
-                isBackGestureActive = false;
+                isUpGestureActive = false;
             }
 
             if (spine.Position.Y - 0.2 > rightHand.Position.Y )
             {
-                if(!isBackGestureActive)
+                if(!isDownGestureActive)
                 {
-                    isBackGestureActive = true;
+                    isDownGestureActive = true;
                     System.Windows.Forms.SendKeys.SendWait("{Down}");
                 }
             }
             else
             {
-                isBackGestureActive = false;
+                isDownGestureActive = false;
             }
         }
         
