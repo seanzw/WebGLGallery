@@ -169,8 +169,8 @@ function Gallery() {
         //    scene.add(this.pictures[idx]);
         //}
 
-        var dx = 5.5;
-        var dy = 3.5;
+        var dx = 5.8;
+        var dy = 3.2;
         var dz = 1;
         var cnt = 0;
 
