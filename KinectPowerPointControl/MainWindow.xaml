@@ -26,6 +26,16 @@
                          Width="20"
                          Name="ellipseHead"
                          Stroke="White" />
+                <Ellipse Fill="Red"
+                         Height="20"
+                         Width="20"
+                         Name="ellipseCenterShoulder"
+                         Stroke="White" />
+                <Ellipse Fill="Red"
+                         Height="20"
+                         Width="20"
+                         Name="ellipsespine"
+                         Stroke="White" />
             </Canvas>
         </Grid>
     </Viewbox>

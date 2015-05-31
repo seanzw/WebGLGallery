@@ -166,11 +166,13 @@ namespace KinectPowerPointControl
 
             //add up and down
             var centerShoulder = closestSkeleton.Joints[JointType.ShoulderCenter];
+            var spine = closestSkeleton.Joints[JointType.Spine];
 
             if (head.TrackingState == JointTrackingState.NotTracked ||
                 rightHand.TrackingState == JointTrackingState.NotTracked ||
                 leftHand.TrackingState == JointTrackingState.NotTracked ||
-                centerShoulder.TrackingState == JointTrackingState.NotTracked)
+                centerShoulder.TrackingState == JointTrackingState.NotTracked ||
+                spine.TrackingState == JointTrackingState.NotTracked)
             {
                 //Don't have a good read on the joints so we cannot process gestures
                 return;
@@ -180,7 +182,8 @@ namespace KinectPowerPointControl
             SetEllipsePosition(ellipseLeftHand, leftHand, isBackGestureActive);
             SetEllipsePosition(ellipseRightHand, rightHand, isForwardGestureActive);
             SetEllipsePosition(ellipseCenterShoulder, centerShoulder, false);
-            ProcessForwardBackGesture(head, rightHand, leftHand,centerShoulder);
+            SetEllipsePosition(ellipsespine, spine, false);
+            ProcessForwardBackGesture(head, rightHand, leftHand,centerShoulder,spine);
         }
 
         //This method is used to position the ellipses on the canvas
@@ -208,7 +211,7 @@ namespace KinectPowerPointControl
             Canvas.SetTop(ellipse, point.Y - ellipse.ActualHeight / 2);
         }
         
-        private void ProcessForwardBackGesture(Joint head, Joint rightHand, Joint leftHand, Joint centerShoulder)
+        private void ProcessForwardBackGesture(Joint head, Joint rightHand, Joint leftHand, Joint centerShoulder, Joint spine)
         {
             if (rightHand.Position.X > head.Position.X + 0.45)
             {
@@ -236,7 +239,7 @@ namespace KinectPowerPointControl
                 isBackGestureActive = false;
             }
 
-            if (centerShoulder.Position.Y + 0.45 < rightHand.Position.Y )
+            if (centerShoulder.Position.Y + 0.1 < rightHand.Position.Y )
             {
                 if (!isBackGestureActive)
                 {
@@ -249,7 +252,7 @@ namespace KinectPowerPointControl
                 isBackGestureActive = false;
             }
 
-            if (centerShoulder.Position.Y - 0.45 < rightHand.Position.Y )
+            if (spine.Position.Y - 0.2 > rightHand.Position.Y )
             {
                 if(!isBackGestureActive)
                 {
@@ -278,6 +281,7 @@ namespace KinectPowerPointControl
             ellipseLeftHand.Visibility = System.Windows.Visibility.Collapsed;
             ellipseRightHand.Visibility = System.Windows.Visibility.Collapsed;
             ellipseCenterShoulder.Visibility = System.Windows.Visibility.Collapsed;
+            ellipsespine.Visibility = System.Windows.Visibility.Collapsed;
         }
 
         void ShowCircles()
@@ -287,6 +291,7 @@ namespace KinectPowerPointControl
             ellipseLeftHand.Visibility = System.Windows.Visibility.Visible;
             ellipseRightHand.Visibility = System.Windows.Visibility.Visible;
             ellipseCenterShoulder.Visibility = System.Windows.Visibility.Visible;
+            ellipsespine.Visibility = System.Windows.Visibility.Visible;
         }
 
         private void ShowWindow()
