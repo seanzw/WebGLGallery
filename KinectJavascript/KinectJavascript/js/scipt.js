@@ -1,4 +1,5 @@
-﻿function Status() {
+﻿
+function Status() {
 
     /**
      * 0 : static;
@@ -6,6 +7,7 @@
      * 2 : up;
      * 3 : right;
      * 4 : down;
+     * 5 : zoom;
      */
     this.move = 0;
 
@@ -15,6 +17,8 @@
     /** What to draw.*/
     this.curRow = 0;
     this.curCol = 0;
+
+    this.curFar = false;
 
 }
 
@@ -28,14 +32,15 @@ function Gallery() {
      * 1 -> up arrow
      * 2 -> right arrow
      * 3 -> down arrow
+     * 4 -> zoom
      */
     this.keyFunc = function (key) {
         if (this.status.move == 0) {
             console.log("Key pressed: " + key);
 
             // ---
-            var row = Math.floor(Math.sqrt(this.pictures.length));
-            var col = Math.ceil(this.pictures.length / row);
+            let row = Math.floor(Math.sqrt(this.pictures.length));
+            let col = Math.ceil(this.pictures.length / row);
             console.log("row = " + row);
             console.log("col = " + col);
             // ---
@@ -47,7 +52,7 @@ function Gallery() {
 
     this.justifyRow = function (r) {
         // return r;
-        var row = Math.floor(Math.sqrt(this.pictures.length));
+        let row = Math.floor(Math.sqrt(this.pictures.length));
         while (r < 0 && row > 0) {
             r += row;
         }
@@ -56,8 +61,8 @@ function Gallery() {
 
     this.justifyCol = function (c) {
         // return c;
-        var row = Math.floor(Math.sqrt(this.pictures.length));
-        var col = Math.ceil(this.pictures.length / row);
+        let row = Math.floor(Math.sqrt(this.pictures.length));
+        let col = Math.ceil(this.pictures.length / row);
         while (c < 0 && col > 0) {
             c += col;
         }
@@ -65,11 +70,11 @@ function Gallery() {
     }
 
     this.getPicId = function (r, c) {
-        var row = Math.floor(Math.sqrt(this.pictures.length));
-        var col = Math.ceil(this.pictures.length / row);
+        let row = Math.floor(Math.sqrt(this.pictures.length));
+        let col = Math.ceil(this.pictures.length / row);
         r = (r + row) % row;
         c = (c + col) % col;
-        var ret = r * col + c;
+        let ret = r * col + c;
         if (ret < this.pictures.length && ret >= 0) {
             return ret;
         } else {
@@ -78,7 +83,7 @@ function Gallery() {
     }
 
     /** The current picture on showing.*/
-    this.curPic = 0;
+    // this.curPic = 0;
 
     /**
      * The grid of pictures.
@@ -91,7 +96,8 @@ function Gallery() {
     this.renderer = new THREE.WebGLRenderer();
 
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(this.renderer.domElement);
+    document.getElementById("container").appendChild(this.renderer.domElement);
+    //document.body.getElement appendChild(this.renderer.domElement);
 
     this.onLoadPic = function (texture) {
         var h = texture.image.height;
@@ -162,12 +168,11 @@ function Gallery() {
         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.x = 0;
         camera.position.y = 0;
-        camera.position.z = 2;
-        
-        //var idx = this.getPicId(this.status.curRow, this.status.curCol);
-        //if (idx >= 0) {
-        //    scene.add(this.pictures[idx]);
-        //}
+        if (this.status.curFar) {
+            camera.position.z = 4;
+        } else {
+            camera.position.z = 2;
+        }
 
         var dx = 5.8;
         var dy = 3.2;
@@ -203,6 +208,14 @@ function Gallery() {
             portion = 1;
         }
 
+        if (this.status.move == 5) {
+            if (this.status.curFar) {
+                camera.position.z = 4 + (2 - 4) * Math.sin(Math.PI * portion / 2);
+            } else {
+                camera.position.z = 2 + (4 - 2) * Math.sin(Math.PI * portion / 2);
+            }
+        }
+
         for (var r = this.status.curRow - 2; r <= this.status.curRow + 2; r++) {
             for (var c = this.status.curCol - 2; c <= this.status.curCol + 2; c++) {
                 var idx = this.getPicId(r, c);
@@ -219,8 +232,8 @@ function Gallery() {
 
                 // var translation = new THREE.Matrix4();
 
-                var x = x_start + (x_end - x_start) * portion;
-                var y = y_start + (y_end - y_start) * portion;
+                var x = x_start + (x_end - x_start) * Math.sin(Math.PI * portion / 2);
+                var y = y_start + (y_end - y_start) * Math.sin(Math.PI * portion / 2);
 
                 mesh.position.x = x * dx;
                 mesh.position.y = y * dy;
@@ -239,6 +252,10 @@ function Gallery() {
         //console.log("CNT = " + cnt);
 
         if (portion >= 1 && this.status.move != 0) {
+            if (this.status.move == 5) {
+                this.status.curFar = !this.status.curFar;
+            }
+
             this.status.move = 0;
             this.status.curCol = this.justifyCol(nextCol);
             this.status.curRow = this.justifyRow(nextRow);
@@ -262,14 +279,85 @@ var theGallery = new Gallery();
 theGallery.onInit('a');
 theGallery.Render();
 
+
+let data = [];
+let galaxyNames = [
+    'Andromeda',
+    "Black Eye Galaxy",
+    "Bode's Galaxy",
+    'Cartwheel Galaxy',
+    'Cigar Galaxy',
+    "Comet Galaxy",
+    "Cosmos Redshift 7",
+    "Hoag's Object",
+    "Large Magellanic Cloud",
+    "Small Magellanic Cloud",
+    "Mayall's Object",
+    "Pinwheel Galaxy",
+    "Sombrero Galaxy",
+    "Sunflower Galaxy",
+    "Tadpole Galaxy",
+    "Whirlpool Galaxy",
+    "Canes Venatici",
+    "Ursa Major",
+    "Tucana",
+    "Serpens Caput",
+    "Delta Solymus",
+];
+
+for (let i = 0; i < 16; ++i) {
+    data.push({ title: galaxyNames[i], text: galaxyNames[i], picture: "/images/" + i.toString() + ".jpg" });
+}
+let myData = new WinJS.Binding.List(data);
+
+WinJS.Namespace.define("Sample.ListView", {
+    data: myData
+});
+WinJS.UI.processAll();
+
+let handler = function (event) {
+    $("#listView").fadeOut();
+    let nrows = Math.floor(Math.sqrt(theGallery.pictures.length));
+    let ncols = Math.ceil(theGallery.pictures.length / nrows);
+    theGallery.status.curRow = Math.floor(event.detail.itemIndex / ncols);
+    theGallery.status.curCol = event.detail.itemIndex % ncols;
+    $("#container").fadeIn();
+}
+
+let listView = document.getElementById("listView").winControl;
+listView.oniteminvoked = handler;
+
 $(document).keydown(function (e) {
     switch (e.which) {
+        case 8: // backspace
+            if (theGallery.status.curFar) {
+                theGallery.status.move = -1;
+                let picId = theGallery.getPicId(theGallery.status.curRow, theGallery.status.curCol);
+                $("#container").fadeOut();
+                $("#listView").fadeIn();
+                theGallery.status.move = 0;
+                listView.currentItem = { index: picId, hasFocus: true, showFocus: true };
+
+            } else {
+                theGallery.keyFunc(4);
+            }
+            break;
+
+        case 13: // enter
+            if (theGallery.status.curFar) {
+                theGallery.keyFunc(4);
+            }
+            break;
+
         case 37: // left
         case 38: // up
         case 39: // right
         case 40: // down
             theGallery.keyFunc(e.which - 37);
             break;
+
+            //case 191: // '/'
+            //    theGallery.keyFunc(4);
 
         default: return; // exit this handler for other keys
     }

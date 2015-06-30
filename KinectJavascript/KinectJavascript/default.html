@@ -8,25 +8,21 @@
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    
 
     <style>
-        body {
+        /*body {
             margin: 0;
-        }
+        }*/
 
-        canvas {
+        /*canvas {
             width: 100%;
             height: 100%;
-        }
+        }*/
     </style>
 
     <!-- KinectJavascript references -->
     <link href="/css/default.css" rel="stylesheet" />
-
-    <script src="js/three.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/default.js"></script>
-    
 
     <script id="shader-fs" type="x-shader/x-fragment">
         void main(void) {
@@ -48,6 +44,33 @@
 
 </head>
 <body>
+    <div id="container">
+
+    </div>
+
+    <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="smallListIconTextItem">
+            <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" draggable="false" />
+            <div class="smallListIconTextItem-Detail">
+                <h3 class="win-h4" data-win-bind="textContent: title"></h3>
+            </div>
+        </div>
+    </div>
+    <div id="listView"
+         class="win-selectionstylefilled"
+         data-win-control="WinJS.UI.ListView"
+         data-win-options="{
+            itemDataSource: Sample.ListView.data.dataSource,
+            itemTemplate: select('.smallListIconTextTemplate'),
+            itemsReorderable: true,
+            layout: { type: WinJS.UI.GridLayout },
+            currentItem: { index: 0, hasFocus: true, showFocus: true },
+}">
+    </div>
+
+    <script src="js/three.js"></script>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/default.js"></script>
     <script src="js/scipt.js"></script>
 </body>
 

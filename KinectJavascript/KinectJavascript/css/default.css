@@ -1,2 +1,32 @@
-﻿body {
+﻿#container {
+    /*float: left;*/
+    display: none;
+    width: 100%;
+    height: 100%;
 }
+
+#listView {
+    /*display: none;*/
+    height: 100%;
+}
+
+.smallListIconTextItem {
+    width: 322px;
+    height: 65px;
+    padding: 5px;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+    .smallListIconTextItem img.smallListIconTextItem-Image {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        margin-right: 20px;
+    }
+
+    .smallListIconTextItem .smallListIconTextItem-Detail {
+        margin: 5px;
+    }
