@@ -37,6 +37,8 @@ namespace KinectPowerPointControl
         bool isBackGestureActive = false;
         bool isUpGestureActive = false;
         bool isDownGestureActive = false;
+        bool isBackspaceActive = false;
+        bool isEnterActive = false;
         SolidColorBrush activeBrush = new SolidColorBrush(Colors.Gold);
         SolidColorBrush inactiveBrush = new SolidColorBrush(Colors.HotPink);
 
@@ -170,6 +172,7 @@ namespace KinectPowerPointControl
             var centerShoulder = closestSkeleton.Joints[JointType.ShoulderCenter];
             var spine = closestSkeleton.Joints[JointType.Spine];
 
+
             if (head.TrackingState == JointTrackingState.NotTracked ||
                 rightHand.TrackingState == JointTrackingState.NotTracked ||
                 leftHand.TrackingState == JointTrackingState.NotTracked ||
@@ -181,11 +184,22 @@ namespace KinectPowerPointControl
             }
 
             SetEllipsePosition(ellipseHead, head, false);
+            //
             SetEllipsePosition(ellipseLeftHand, leftHand, isBackGestureActive);
             SetEllipsePosition(ellipseRightHand, rightHand, isForwardGestureActive);
+            SetEllipsePosition(ellipseRightHand, rightHand, isUpGestureActive);
+            SetEllipsePosition(ellipseRightHand, rightHand, isDownGestureActive);
+            // backspace and enter
+            SetEllipsePosition(ellipseLeftHand, leftHand, isBackspaceActive);
+            SetEllipsePosition(ellipseLeftHand, leftHand, isEnterActive);
             SetEllipsePosition(ellipseCenterShoulder, centerShoulder, false);
             SetEllipsePosition(ellipsespine, spine, false);
-            ProcessForwardBackGesture(head, rightHand, leftHand,centerShoulder,spine);
+            if(Convert.ToByte(isBackGestureActive) + Convert.ToByte(isForwardGestureActive) 
+                + Convert.ToByte(isUpGestureActive) + Convert.ToByte(isDownGestureActive) +
+                Convert.ToByte(isBackspaceActive) + Convert.ToByte(isEnterActive) <= 1)
+            {
+                ProcessForwardBackGesture(head, rightHand, leftHand, centerShoulder, spine);
+            }
         }
 
         //This method is used to position the ellipses on the canvas
@@ -265,6 +279,33 @@ namespace KinectPowerPointControl
             else
             {
                 isDownGestureActive = false;
+            }
+
+            if (centerShoulder.Position.Y + 0.1 < leftHand.Position.Y)
+            {
+                if (!isEnterActive)
+                {
+                    isEnterActive = true;
+                    System.Windows.Forms.SendKeys.SendWait("{Enter}");
+                    //move forward
+                }
+            }
+            else
+            {
+                isEnterActive = false;
+            }
+
+            if (spine.Position.Y - 0.2 > leftHand.Position.Y)
+            {
+                if (!isBackspaceActive)
+                {
+                    isBackspaceActive = true;
+                    System.Windows.Forms.SendKeys.SendWait("{Backspace}");
+                }
+            }
+            else
+            {
+                isBackspaceActive = false;
             }
         }
         
